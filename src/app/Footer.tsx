@@ -42,9 +42,9 @@ export default function Footer() {
 
         {/* Column 3: Community Note or Call Out */}
         <div className="space-y-4 lg:pl-12">
-          <h4 className="font-semibold text-white tracking-wider uppercase text-sm">Empowering Innovators</h4>
+          <h4 className="font-semibold text-white tracking-wider uppercase text-sm">Our Mission</h4>
           <p className="text-sm text-slate-300 font-light leading-relaxed">
-            Building software, securing systems, and managing data for a brighter tech horizon in Nigeria and across Africa.
+            Our mission is to foster a vibrant community of students, where collaboration, innovation, and growth thrive. We aim to provide opportunities for learning, networking, and personal development in the field of computing.
           </p>
         </div>
 
