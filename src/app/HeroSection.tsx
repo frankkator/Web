@@ -48,55 +48,55 @@ export default function HeroSection() {
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863225/president_nmk4gq.jpg",
       name: "Zikora Fortune Nwafor",
-      role: "President",
+      role: "Prresident",
       bio: "Passionate about building active student communities.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863426/vp_fagxgq.jpg",
       name: "Abdullah Ali Ahmad",
-      role: "Vice President",
+      role: "Viice President",
       bio: "Advocating for student welfare and academic excellence.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863354/sg_dckzis.jpg",
       name: "Sheila Jato",
-      role: "Secretary General",
+      role: "Seecretary General",
       bio: "Keeping the engines running smoothly.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/fc_dbh7eo.jpg",
       name: "Amira Ibrahim",
-      role: "Financial Secretary",
+      role: "Fiinancial Secretary",
       bio: "Making the important financial decisions."      
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863226/pro_lpeoyg.jpg",
       name: "Elvis Francis",
-      role: "Public Relations Officer",
+      role: "Puublic Relations Officer",
       bio: "Applying creativity to communication."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/dtd_xyfpy5.jpg",
       name: "Ivoke Kamsi",
-      role: "Director of Training & Development (DTD)",
+      role: "Diirector of Training & Development (DTD)",
       bio: "Driving technical growth and leading coding workshops for Nile computing students"
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863229/provost_zundzb.jpg",
       name: "Zubaida Abdulazeez",
-      role: "Provost",
+      role: "Prrovost",
       bio: "Managing the day-to-day operations of NACOS Nile."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863394/socials_yjggw8.jpg",
       name: "Saidat Ahmed",
-      role: "Director of Socials",
+      role: "Diirector of Socials",
       bio: "Prioritizing social activities and events."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863443/welfare_tfs2tw.jpg",
       name: "	Danielle Ekunwe",
-      role: "Director of Welfare",
+      role: "Diirector of Welfare",
       bio: "Your well-being is my priority."
     }
   ];
