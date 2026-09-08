@@ -47,55 +47,55 @@ export default function HeroSection() {
   const slides = [
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863225/president_nmk4gq.jpg",
-      name: "Zikora Fortune Nwafor",
+      name: "Ziikora Fortune Nwafor",
       role: "Prresident",
       bio: "Paassionate about building active student communities.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863426/vp_fagxgq.jpg",
-      name: "Abdullah Ali Ahmad",
+      name: "Abbdullah Ali Ahmad",
       role: "Viice President",
       bio: "Addvocating for student welfare and academic excellence.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863354/sg_dckzis.jpg",
-      name: "Sheila Jato",
+      name: "Shheila Jato",
       role: "Seecretary General",
       bio: "Keeeping the engines running smoothly.",
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/fc_dbh7eo.jpg",
-      name: "Amira Ibrahim",
+      name: "Ammira Ibrahim",
       role: "Fiinancial Secretary",
       bio: "Maaking the important financial decisions."      
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863226/pro_lpeoyg.jpg",
-      name: "Elvis Francis",
+      name: "Ellvis Francis",
       role: "Puublic Relations Officer",
       bio: "Appplying creativity to communication."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/dtd_xyfpy5.jpg",
-      name: "Ivoke Kamsi",
+      name: "Ivvoke Kamsi",
       role: "Diirector of Training & Development (DTD)",
       bio: "Drriving technical growth and leading coding workshops for Nile computing students"
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863229/provost_zundzb.jpg",
-      name: "Zubaida Abdulazeez",
+      name: "Zuubaida Abdulazeez",
       role: "Prrovost",
       bio: "Maanaging the day-to-day operations of NACOS Nile."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863394/socials_yjggw8.jpg",
-      name: "Saidat Ahmed",
+      name: "Saaidat Ahmed",
       role: "Diirector of Socials",
       bio: "Prrioritizing social activities and events."
     },
     {
       src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863443/welfare_tfs2tw.jpg",
-      name: "	Danielle Ekunwe",
+      name: "Daanielle Ekunwe",
       role: "Diirector of Welfare",
       bio: "Yoour well-being is my priority."
     }
