@@ -56,7 +56,7 @@ export default function Footer() {
           &copy; {currentYear} Nile University Computing Community. All rights reserved.
         </p>
         <p className="text-center sm:text-right font-mono tracking-tight">
-          Designed & Developed by the <span className="text-white font-sans font-medium">Computing Guild</span>
+          Designed & Developed by <span className="text-white font-sans font-medium">Nacos</span>
         </p>
       </div>
     </footer>

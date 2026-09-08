@@ -115,7 +115,7 @@ export default function HeroSection() {
           </div>
           
           <h1 className="text-xl sm:text-5xl md:text-4xl font-extrabold tracking-tight leading-[1.1]">
-            Welcome Students to the <span className="text-cyan-400 text-2xl">Nile University Faculty of Computing Community</span>
+            Welcome Students to  <span className="text-cyan-400 text-2xl">Nile University Faculty of Computing Community</span>
           </h1>
           
           <p className="text-lg text-slate-200 font-light leading-relaxed">
