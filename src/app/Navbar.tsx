@@ -26,7 +26,7 @@ export default function NavBar() {
       className={`fixed top-0 left-0 w-full h-16 flex items-center z-50 transition-all duration-300 px-4 md:px-8 ${
         isScrolled || isOpen
           ? "bg-[#274193] shadow-md border-none" 
-          : "bg-transparent backdrop-blur-sm border-b border-white/10"
+          : "bg-transparent backdrop-blur border-b border-white/10"
       }`}
     >
       <div className="flex justify-between items-center w-full max-w-7xl mx-auto">

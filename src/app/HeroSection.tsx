@@ -1,7 +1,108 @@
+"use client";
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Autoplay } from 'swiper/modules'; // Optional: for smoother slide changes
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
+// A lightweight, reliable typewriter component for React
+function Typewriter({ text, speed = 40, delay = 0 }: { text: string; speed?: number; delay?: number }) {
+  const [displayedText, setDisplayedText] = useState("");
+
+  useState(() => {
+    let isMounted = true;
+    setDisplayedText(""); // Clear previous text instantly on index change
+    
+    const timeoutId = setTimeout(() => {
+      let currentIdx = 0;
+      const intervalId = setInterval(() => {
+        if (!isMounted) return;
+        if (currentIdx < text.length) {
+          setDisplayedText((prev) => prev + text.charAt(currentIdx));
+          currentIdx++;
+        } else {
+          clearInterval(intervalId);
+        }
+      }, speed);
+
+      return () => clearInterval(intervalId);
+    }, delay);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
+  });
+
+  return <span>{displayedText}</span>;
+}
 
 export default function HeroSection() {
+  // Track the active slide index to force re-render the typewriter strings
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Mock data filled out to show how it displays nicely
+  const slides = [
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863225/president_nmk4gq.jpg",
+      name: "Zikora Fortune Nwafor",
+      role: "President",
+      bio: "Passionate about building active student communities.",
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863426/vp_fagxgq.jpg",
+      name: "Abdullah Ali Ahmad",
+      role: "Vice President",
+      bio: "Advocating for student welfare and academic excellence.",
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863354/sg_dckzis.jpg",
+      name: "Sheila Jato",
+      role: "Secretary General",
+      bio: "Keeping the engines running smoothly.",
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/fc_dbh7eo.jpg",
+      name: "Amira Ibrahim",
+      role: "Financial Secretary",
+      bio: "Making the important financial decisions."      
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863226/pro_lpeoyg.jpg",
+      name: "Elvis Francis",
+      role: "Public Relations Officer",
+      bio: "Applying creativity to communication."
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863325/dtd_xyfpy5.jpg",
+      name: "Ivoke Kamsi",
+      role: "Director of Training & Development (DTD)",
+      bio: "Driving technical growth and leading coding workshops for Nile computing students"
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863229/provost_zundzb.jpg",
+      name: "Zubaida Abdulazeez",
+      role: "Provost",
+      bio: "Managing the day-to-day operations of NACOS Nile."
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863394/socials_yjggw8.jpg",
+      name: "Saidat Ahmed",
+      role: "Director of Socials",
+      bio: "Prioritizing social activities and events."
+    },
+    {
+      src: "https://res.cloudinary.com/wapbiprz/image/upload/v1788863443/welfare_tfs2tw.jpg",
+      name: "	Danielle Ekunwe",
+      role: "Director of Welfare",
+      bio: "Your well-being is my priority."
+    }
+  ];
+
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-b from-[#274193] to-[#1a2d66] text-white overflow-hidden px-6 py-12 md:py-20">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-b from-[#274193] to-[#1a2d66] text-white overflow-hidden px-6 py-12 md:py-20 mt-4">
       {/* Decorative background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       
@@ -11,7 +112,7 @@ export default function HeroSection() {
         <div className="space-y-6 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium tracking-wide backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Nile University Computing Guild
+            Nile University Faculty of Computing
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
@@ -31,56 +132,62 @@ export default function HeroSection() {
             </a>
             <a 
               href="#" 
-              className="w-full sm:w-auto text-center border border-white/30 hover:border-white font-medium bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-lg px-8 py-3.5 transition-all"
+              className="w-full sm:w-auto text-center border border-white/30 hover:border-white font-medium bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-lg px-8 py-3.5 transition-all hover:-translate-y-0.5"
             >
-              Explore Programs
+              Explore Events
             </a>
           </div>
         </div>
 
-        {/* Right Column: Interactive/Animated Tech Graphic */}
+        {/* Right Column: Interactive Swiper Card */}
         <div className="relative flex justify-center items-center w-full max-w-lg lg:max-w-none mx-auto">
-          {/* Animated Glow Rings */}
-          <div className="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-[80px] animate-pulse"></div>
-          <div className="absolute w-60 h-60 md:w-80 md:h-80 bg-purple-500/10 rounded-full blur-[60px] animate-ping [animation-duration:4s]"></div>
-
-          {/* Abstract Floating UI Wireframe */}
-          <div className="relative border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-6 w-full aspect-[4/3] shadow-2xl shadow-black/40 flex flex-col justify-between border-t-white/20">
+          <div className="relative border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-4 w-full aspect-[4/3] shadow-2xl shadow-black/40 flex flex-col justify-between border-t-white/20 overflow-hidden">
             
-            {/* Top row fake window controls */}
-            <div className="flex gap-2">
-              <span className="w-3 h-3 rounded-full bg-red-400/70"></span>
-              <span className="w-3 h-3 rounded-full bg-yellow-400/70"></span>
-              <span className="w-3 h-3 rounded-full bg-green-400/70"></span>
-            </div>
+            <Swiper 
+              modules={[EffectFade, Autoplay]}
+              effect={'fade'}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              className='w-full h-full rounded-xl overflow-hidden'
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            >
+              {slides.map((slide, index) => (
+                <SwiperSlide key={index} className="relative w-full h-full">
+                  {slide.src && (
+                    <img 
+                      src={slide.src} 
+                      alt={slide.name} 
+                      className="w-full h-full object-cover brightness-[0.65]" 
+                    />
+                  )}
+                  
+                  {/* Text Overlay container */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent p-6 flex flex-col justify-end min-h-[50%]">
+                    {/* Only type the text if this specific slide is active */}
+                    {activeIndex === index ? (
+                      <div className="space-y-1">
+                        <h3 className="text-xl font-bold text-white min-h-[28px]">
+                          <Typewriter text={slide.name} speed={50} />
+                        </h3>
+                        <p className="text-sm font-medium text-cyan-300 min-h-[20px]">
+                          <Typewriter text={slide.role} speed={40} delay={400} />
+                        </p>
+                        <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed pt-1 min-h-[40px]">
+                          <Typewriter text={slide.bio} speed={20} delay={900} />
+                        </p>
+                      </div>
+                    ) : (
+                      // Fallback placeholders to avoid structural jumps
+                      <div className="space-y-1 opacity-0">
+                        <h3 className="text-xl font-bold">{slide.name}</h3>
+                        <p className="text-sm">{slide.role}</p>
+                        <p className="text-xs sm:text-sm">{slide.bio}</p>
+                      </div>
+                    )}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-            {/* Fake Code / Node Grid Graphics */}
-            <div className="flex-1 my-6 flex flex-col justify-center space-y-3 font-mono text-xs sm:text-sm text-cyan-300/80">
-              <div className="flex items-center gap-2"><span className="text-purple-400">const</span> community = <span className="text-yellow-300">new Community()</span>;</div>
-              <div className="pl-4 flex items-center gap-2">community.<span className="text-emerald-400">empower</span>(<span className="text-orange-300">'Nile_Students'</span>);</div>
-              <div className="pl-4 text-slate-400">// Connecting network nodes...</div>
-              
-              <div className="mt-4 grid grid-cols-3 gap-2 pt-2">
-                <div className="h-16 border border-white/10 bg-white/5 rounded-lg flex flex-col justify-center items-center">
-                  <span className="text-xl">💻</span>
-                  <span className="text-[10px] text-slate-300 font-sans mt-1">Code</span>
-                </div>
-                <div className="h-16 border border-white/10 bg-white/5 rounded-lg flex flex-col justify-center items-center">
-                  <span className="text-xl">🛡️</span>
-                  <span className="text-[10px] text-slate-300 font-sans mt-1">Cyber</span>
-                </div>
-                <div className="h-16 border border-white/10 bg-white/5 rounded-lg flex flex-col justify-center items-center">
-                  <span className="text-xl">📊</span>
-                  <span className="text-[10px] text-slate-300 font-sans mt-1">Data</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom status bar */}
-            <div className="flex justify-between items-center text-[11px] text-slate-400 border-t border-white/10 pt-3">
-              <span>Status: Online & Building</span>
-              <span className="text-emerald-400 font-semibold animate-pulse">● System Stable</span>
-            </div>
           </div>
         </div>
 
