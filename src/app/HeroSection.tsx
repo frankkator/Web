@@ -110,17 +110,16 @@ export default function HeroSection() {
         
         {/* Left Column: Copy & CTAs */}
         <div className="space-y-6 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium tracking-wide backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium tracking-wide backdrop-blur-sm font-bold ">
             Nile University Faculty of Computing
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
-            Shaping the Next Generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">Tech Leaders</span>
+          <h1 className="text-xl sm:text-5xl md:text-4xl font-extrabold tracking-tight leading-[1.1]">
+            Welcome Students to the <span className="text-cyan-400 text-2xl">Nile University Faculty of Computing Community</span>
           </h1>
           
           <p className="text-lg text-slate-200 font-light leading-relaxed">
-            Welcome to the Nile University Computing Community. Build real-world projects, master cutting-edge technologies, and collaborate with a network of driven builders, developers, and innovators.
+            Join us in fostering a vibrant community of students, where collaboration, innovation, and growth thrive. Explore events, connect with peers, and be part of a journey that shapes the future of computing at NACOS.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
